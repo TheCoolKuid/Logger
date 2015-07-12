@@ -17,14 +17,13 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
-
-import ru.thecoolkuid.main.log.LogWithPrint;
  
 public class SendEmail {
  
     private String username;
     private String password;
     private Properties props;
+    
     public SendEmail(String username, String password, boolean Auth, boolean StartTLS, String SMTPHost, int port) {
         this.username = username;
         this.password = password;
@@ -41,7 +40,7 @@ public class SendEmail {
                 return new PasswordAuthentication(username, password);
             }
         });
- 
+        
         try {
         	Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(username));

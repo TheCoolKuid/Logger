@@ -27,8 +27,12 @@ public class SendByFTP {
 	 * @param file Файл, который будет загружен.
 	 * @throws Exception
 	 */
-	public static void FTPUpload(String directory, File file) throws Exception{
+	public static void FTPUpload(String directory, File file){
+		try{
 		ru.thecoolkuid.main.send.FTPUpload.FTPup(username, pass, Adress, directory, file.getName());
+		}catch(Exception e){
+			
+		}
 	}
 	/**
 	 *Осуществляет загрузку на FTP сервер.
@@ -37,7 +41,7 @@ public class SendByFTP {
 	 * @param file Файл, который будет загружен.
 	 * @throws Exception
 	 */
-	public static void FTPUpload(String directory, String file) throws Exception{
+	public static void FTPUpload(String directory, String file){
 		ru.thecoolkuid.main.send.FTPUpload.FTPup(username, pass, Adress, directory, file);
 	}
 	/**
